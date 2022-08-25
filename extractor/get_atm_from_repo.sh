@@ -55,8 +55,21 @@ if [ "$2" -lt 0 ] || [ $2 -gt 99 ]; then
 fi
 site=$1
 year=$(printf "%02d" $2)
-
+n=0
 for m in $(seq -w 1 12); do
-	url_file="$url_base/${site}/atmprof${site}${year}${m}.dat"
-	wget $url_file
+	file="atmprof${site}${year}${m}.dat"
+	url_file="$url_base/${site}/${file}"
+	if $(wget -q $url_file); then
+		echo "File $file retrived"
+		n=$(( n + 1 ))
+	else
+		echo "Failed to retrieve $file"
+	fi
 done
+	if [ "$n" -eq 12 ]; then
+		echo "Success retrieving site:${site} for year:$year"
+	else
+		echo "Failed to retrieve some files. $n files extracted"
+		echo "Perhaps files does not be already produced. Please check at https://github.com/lagoproject/atmospheres/"
+		exit 99
+	fi

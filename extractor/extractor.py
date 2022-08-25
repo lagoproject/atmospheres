@@ -196,7 +196,7 @@ def main(argv):
     ]
     if verbose:
         print("Extracting data from sites google sheet...", end='')
-    credentials = ServiceAccountCredentials.from_json_keyfile_name('access-data-64a03ecb59d0.json', scope)
+    credentials = ServiceAccountCredentials.from_json_keyfile_name('<insert json access data here.json', scope)
     client = gspread.authorize(credentials)
     sheet = client.open("DatosRC").sheet1
     data = sheet.get_all_records()
