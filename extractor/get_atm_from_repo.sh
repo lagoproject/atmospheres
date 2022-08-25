@@ -66,10 +66,10 @@ for m in $(seq -w 1 12); do
 		echo "Failed to retrieve $file"
 	fi
 done
-	if [ "$n" -eq 12 ]; then
-		echo "Success retrieving site:${site} for year:$year"
-	else
-		echo "Failed to retrieve some files. $n files extracted"
-		echo "Perhaps files does not be already produced. Please check at https://github.com/lagoproject/atmospheres/"
-		exit 99
-	fi
+if [ "$n" -eq 12 ]; then
+	echo "Success retrieving site:${site} for year:$year"
+else
+	echo "Failed to retrieve some files. $n files extracted"
+	echo "Perhaps files does not be already produced. Please check at https://github.com/lagoproject/atmospheres/"
+	exit 99
+fi
