@@ -53,8 +53,8 @@
 # for now, using instantaneous profiles at local noon and mignight for each site
 # ## Preliminaries
 # required:
+# sudo apt install pip screen vim
 # sudo pip install pytz gspread numpy scipy pandas timezonefinder oauth2client 
-
 from datetime import datetime
 import sys
 import getopt
@@ -118,7 +118,7 @@ def n_index():
 
 def main(argv):
     # Some auxiliary variables
-    gdas_atm_path = '../atm/'
+    gdas_atm_path = './'
     gdas_local_hour = [00, 12]
     gdas_min_height = str(0.)
     gdas_max_height = str(0.)
@@ -173,7 +173,7 @@ def main(argv):
             start_year = int(arg)
             print(f"    year      :  {start_year}")
         elif opt in ("-d", "--end"):
-            end_year = arg
+            end_year = int(arg)
             default_last = False
             print(f"    last year :  {end_year}")
 
