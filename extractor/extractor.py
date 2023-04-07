@@ -212,9 +212,21 @@ def main(argv):
         if not gdas_site or int(row['SiteId']) == int(gdas_site):
             for year in range(start_year, end_year + 1):
                 for date in days_in_year(year, Date):
+                    if average:
+                        avg_id = "{}{}{}".format(
+                                '{:d}'.format(row["SiteId"]),
+                                '{:02d}'.format(date.year-int(date.year/100)*100),
+                                '{:02d}'.format(date.month)
+                        )
+                        avg_file = f"atmprof{avg_id}.dat"
+                        if os.path.isfile(avg_file):
+                            if verbose:
+                                print(f"File {avg_file} exists")
+                            continue   # average file exists, nothing to do
                     for hour in gdas_local_hour:
                         utctime, gdas_file = gdas_get_time(row, date, Time(hour, 0, 0), row)
                         gdas_file = gdas_atm_path + gdas_file
+                        # check if the atmprof file already exists
                         if verbose:
                             print(f"{row['SiteId']} {date} {hour} ", end="")
                         if extract:
@@ -255,12 +267,6 @@ def main(argv):
                                         avg_atm[avg_atm < 0] = 1e-5
                                         avg_atm.at[49, 't'] = 0
                                         # output
-                                        avg_id = "{}{}{}".format(
-                                            '{:d}'.format(row["SiteId"]),
-                                            '{:02d}'.format(date.year-int(date.year/100)*100),
-                                            '{:02d}'.format(date.month)
-                                        )
-                                        avg_file = f"atmprof{avg_id}.dat"
                                         f = open(gdas_atm_path + avg_file, "w")
                                         f.write(f"# Atmospheric Model {avg_id}\n")
                                         f.write("# Col. #1          #2           #3            #4\n")
