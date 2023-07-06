@@ -62,7 +62,4 @@ ARTI is distributed under the [BSD-3 License](https://opensource.org/licenses/BS
 <!-- CONTACT -->
 ## Contact
 
-This library is mantained by H. Asorey (@asoreyh) for the LAGO simulation group. Atmosheric instantaneous profiles need large storage and were not included in this public repository, but are available upon request. Please don't hesitate to [contact us](https://lagoproject.net/contact.html) for further requests or comments.
-
---
-@asoreyh for the @lagoproject
+This library is mantained by [H. Asorey](@asoreyh) for the LAGO simulation group. Atmosheric instantaneous profiles need large storage and were not included in this public repository, but are available upon request. Please don't hesitate to [contact us](https://lagoproject.net/contact.html) for further requests or comments.
