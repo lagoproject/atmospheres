@@ -9,7 +9,6 @@
   </a>
   <h3 align="center">The LAGO Monthly Averaged Atmospheric Profiles Library</h3>
   <p align="center">
-    To optimize the simulation of the expected background or signals flux at each site, we [developed a method](https://doi.org/10.1139/cjp-2020-0561) to obtain the monthly-averaged local atmospheric profiles, obtained from the instantaneous [Global Data Assimilation System (GDAS)](https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.ncdc:C00379) profiles. 
     <br />
     <br />
     <a href="https://github.com/lagoproject/atmospheres/issues">Request Feature</a>
@@ -22,6 +21,8 @@
 
 
 ## LAGO sites atmospheric profiles
+
+For optimizing the simulation of the expected background or signals flux at each site, we [developed a method](https://doi.org/10.1139/cjp-2020-0561) to obtain the monthly-averaged local atmospheric profiles, obtained from the instantaneous [Global Data Assimilation System (GDAS)](https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.ncdc:C00379) profiles. 
 
 In this repository we storage the atmospheric profiles for all the LAGO sites described in the [LAGO DMP](https://lagoproject.github.io/DMP/), starting in January 2015. While it is not exclusive, it is mainly intended to be used within the [ARTI](https://github.com/lagoproject/arti) atmospheric radiation background tool suite. 
 
