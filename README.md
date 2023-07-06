@@ -55,7 +55,7 @@ This package includes a slightly modified version of the [gdastool](https://doi.
 <!-- LICENSE -->
 ## License
 
-ARTI is distributed under the [BSD-3 License](https://opensource.org/licenses/BSD-3-Clause). See the [LICENCE](LICENSE) for more information.
+This library is distributed under the [BSD-3 License](https://opensource.org/licenses/BSD-3-Clause). See the [LICENCE](LICENSE) for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
